@@ -986,7 +986,8 @@ function lis(a: number[]): number[] {
       j = result[n];
       if (a[j] < k) {
         p[i] = j;
-        result[++n] = i;
+        if (!(i === 1 && a[0] === -1)) ++n
+        result[n] = i;
       } else {
         u = 0;
         v = n;
